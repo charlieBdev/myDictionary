@@ -1,0 +1,61 @@
+/* body {
+    height: 100%;
+} */
+
+.centerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 10px;
+    /* height: 100%; */
+}
+
+.centerForm > form > div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav > ul {
+    list-style-type: none;
+}
+
+#tB {
+    width: 300px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.words {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h3 {
+    font-family: 'Caveat', cursive;
+}
+
+.myDictionary {
+    margin-top: 100px;
+}

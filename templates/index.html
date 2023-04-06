@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Home
+
+{% endblock %}
+
+
+{% block body %}
+
+    {% if session["user_id"] %}
+        <div class="status">
+            <div>
+                <p>You are logged in as <b>{{ username }}</b>.
+            </div>
+            <div>
+                <a href="/logout">Log out</a></p>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>myDictionary</h1>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li><a href="/add">Add a word</a></li>
+            </ul>
+        </div>
+
+        <table class="table table-light table-striped table-hover table-bordered border-light">
+            <thead class="table-active">
+                <th>Word</th>
+                <th>Definition</th>
+                <th>Part of Speech</th>
+                <th>Sentence/s</th>
+                <th>Notes</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for word in words %}
+                    <tr>
+                        <td>{{ word['word'] }}</td>
+                        <td>{{ word['definition'] }}</td>
+                        <td>{{ word['partOfSpeech'] }}</td>
+                        <td>{{ word['sentence'] }}</td>
+                        <td>{{ word['notes'] }}</td>
+                        <td>
+                            <form action="/edit" method="post">
+                                <input name="wordID" type="hidden" value="{{ word['id'] }}">
+                                <input class="btn btn-success btn-sm" type="submit" value="Edit">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/delete" method="post">
+                                <input name="wordID" type="hidden" value="{{ word['id'] }}">
+                                <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+
+        You are not logged in. <a href="/login">Log in</a>.
+
+    {% endif %}
+
+{% endblock %}

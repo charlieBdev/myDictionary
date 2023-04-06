@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Word
+{% endblock %}
+
+{% block body %}
+
+    <div class="centerForm">
+        <h1>Edit Word</h1>
+        <form action="/saveEdit" method="post">
+            <input name="wordID" type="hidden" value="{{ wordID }}">
+            <!-- value="{{ word['id'] }} -->
+            <div>
+                <input autocomplete="off" id="tB" autofocus name="word" placeholder="Word" type="text" value="{{ word }}">
+            </div>
+
+            <div>
+                <textarea autocomplete="off" id="tB" name="definition" placeholder="Definition" type="text">{{ definition }}</textarea>
+            </div>
+
+            <div>
+                <input autocomplete="off" id="tB" name="partOfSpeech" placeholder="Part of speech" type="text" value="{{ partOfSpeech }}">
+            </div>
+
+            <div>
+                <textarea autocomplete="off" id="tB" name="sentence" placeholder="Example sentence/s" type="text">{{ sentence }}</textarea>
+            </div>
+
+            <div>
+                <input autocomplete="off" id="tB" name="notes" placeholder="Notes" type="text" value="{{ notes }}">
+            </div>
+
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit">Edit Word</button>
+            </div>
+
+            <div>
+                <a href="/">Back</a>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

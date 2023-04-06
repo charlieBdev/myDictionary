@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+
+    <div class="header">
+        <h1 class="myDictionary">myDictionary</h1>
+    </div>
+
+    <div class="centerForm">
+        <h3>Register</h3>
+        <form action="/register" method="post">
+            <div>
+                <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+            </div>
+
+            <div>
+                <input autocomplete="off" name="password" placeholder="Password" type="password">
+            </div>
+
+            <div>
+                <input autocomplete="off" name="confirmation" placeholder="Confirm Password" type="password">
+            </div>
+
+            <div>
+                <button class="btn btn-primary" type="submit">Register</button>
+            </div>
+
+            <div>
+                <a href="/login">Back</a>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Word
+{% endblock %}
+
+{% block body %}
+
+    <div class="centerForm">
+        <h1>Add Word</h1>
+        <form action="/add" method="post">
+            <div>
+                <input autocomplete="off" id="tB" autofocus name="word" placeholder="Word" type="text">
+            </div>
+
+            <div>
+                <textarea autocomplete="off" id="tB" name="definition" placeholder="Definition" type="text"></textarea>
+            </div>
+
+            <div>
+                <input autocomplete="off" id="tB" name="partOfSpeech" placeholder="Part of speech" type="text">
+            </div>
+
+            <div>
+                <textarea autocomplete="off" id="tB" name="sentence" placeholder="Example sentence/s" type="text"></textarea>
+            </div>
+
+            <div>
+                <input autocomplete="off" id="tB" name="notes" placeholder="Notes" type="text">
+            </div>
+
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit">Add Word</button>
+            </div>
+
+            <div>
+                <a href="/">Back</a>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}
