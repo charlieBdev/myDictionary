@@ -47,13 +47,13 @@
                         <td>{{ word['partOfSpeech'] }}</td>
                         <td>{{ word['sentence'] }}</td>
                         <td>{{ word['notes'] }}</td>
-                        <td>
+                        <td class="text-center">
                             <form action="/edit" method="post">
                                 <input name="wordID" type="hidden" value="{{ word['id'] }}">
                                 <input class="btn btn-success btn-sm" type="submit" value="Edit">
                             </form>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <form action="/delete" method="post">
                                 <input name="wordID" type="hidden" value="{{ word['id'] }}">
                                 <input class="btn btn-danger btn-sm" type="submit" value="Delete">
